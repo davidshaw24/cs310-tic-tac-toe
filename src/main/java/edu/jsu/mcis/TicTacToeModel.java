@@ -5,7 +5,6 @@ public class TicTacToeModel {
     private Mark[][] board; /* Game board */
     private boolean xTurn;  /* True if X is current player */
     private int width;      /* Size of game board */
-    
     /* ENUM TYPE DEFINITIONS */
     
     /* Mark (represents X, O, or an empty square */
@@ -75,8 +74,8 @@ public class TicTacToeModel {
 
         /* Initialize board by filling every square with empty marks */
         
-        for( int i = 0; i < width; ++i){
-            for( int j = 0; j < width; ++j){
+        for (int i=0; i < width; i++){
+            for (int j =0; j < width; j++){
                 board[i][j] = Mark.EMPTY;
             }
         }
@@ -91,10 +90,11 @@ public class TicTacToeModel {
            toggle "xTurn" from true to false (or vice-versa) to switch to the
            other player before returning TRUE.  Otherwise, return FALSE. */
         
-        if (isValidSquare(row, col) == false){
+        
+        if (isValidSquare(row,col) == false){
             return false;
         }
-        else if(isSquareMarked(row, col) == true){
+        else if (isSquareMarked(row,col) == true){
             return false;
         }
         else{
@@ -124,7 +124,7 @@ public class TicTacToeModel {
         }
         
     }
- 
+	
     private boolean isSquareMarked(int row, int col) {
         
         /* Return TRUE if the square at specified location is marked */
@@ -138,14 +138,12 @@ public class TicTacToeModel {
         }
             
     }
-            
-    
 	
     public Mark getMark(int row, int col) {
         
         /* Return the mark from the square at the specified location */
         
-        return board[row][col];
+        return board[row][col];          
     }
 	
     public Result getResult() {
@@ -300,7 +298,7 @@ public class TicTacToeModel {
         
         /* Output the board contents as a string (see examples) */
         
-        for (int i = 0; i < width; i++) {
+           for (int i = 0; i < width; i++) {
 
             output.append(i);
         }
